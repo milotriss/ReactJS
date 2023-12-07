@@ -1,0 +1,99 @@
+.planGroup {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.planGroup .planTitle {
+    text-align: center;
+}
+.planGroup .planTitle h2 {
+    color: #0B132A;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+.planGroup .planTitle p {
+    color: #4F5665;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+.planGroup .plans {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.planGroup .plans .plan {
+    width: 32%;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 760px;
+    border-radius: 10px;
+    border: 2px solid #DDD;
+    background: #FFF;
+}
+.planGroup .plans .plan h4 {
+    color: #0B132A;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.planGroup .plans .plan ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.planGroup .plans .plan ul li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.planGroup .plans .plan ul li i {
+    color: #2FAB73;
+    font-size: 24px;
+}
+.planGroup .plans .plan ul li span {
+    color: #4F5665;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; 
+}
+.planGroup .plans .plan h3 {
+    color: #0B132A;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.planGroup .plans .plan button {
+    width: 177.876px;
+    height: 45px;
+    border-radius: 50px;
+    border: 2px solid #F53838;
+    background-color: transparent;
+    color: var(--primary);
+}
+.planGroup .plans .plan button:hover {
+    background-color: var(--primary);
+    color: #fff;
+    box-shadow: 0px 30px 30px -12px rgba(245, 56, 56, 0.35);
+}

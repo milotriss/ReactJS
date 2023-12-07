@@ -1,0 +1,87 @@
+main {
+    width: 100vw;
+    padding: 10px 10px 0 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+}
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 170px;
+    padding: 0 160px;
+}
+.option .optionLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+.option .optionLeft h2{
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+}
+.option .optionLeft p {
+    color: #4F5665;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+.option .optionLeft .optionLeftChecks {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.option .optionLeft .optionLeftChecks i {
+    color: #2FAB73;
+    font-size: 24px;
+}
+.option .optionLeft .optionLeftChecks p {
+    color: #4F5665;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; 
+}
+
+
+/* Location */
+.location {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.location .locationTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.location .locationTitle h1 {
+    color: #0B132A;
+    width: 65%;
+    text-align: center;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 50px;
+}
+.location .locationTitle p {
+    width: 75%;
+    color: #4F5665;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}

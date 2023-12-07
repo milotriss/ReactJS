@@ -1,0 +1,100 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.comment .commentTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.comment .commentTitle h1 {
+    color: #0B132A;
+    text-align: center;
+    width: 60%;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 50px; 
+}
+.comment .commentTitle p {
+    color: #4F5665;
+    text-align: center;
+    width: 75%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+
+.comment .commentItems {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.comment .commentItems .commentItem {
+    width: 32%;
+    height: 230px;
+    border-radius: 10px;
+    border: 2px solid #DDD;
+    padding: 30px;
+}
+.comment .commentItems .commentItem figure {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.comment .commentItems .commentItem figure figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.comment .commentItems .commentItem figure figcaption .commentRate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+.comment .commentItems .commentItem figure figcaption .commentRate i {
+    color: #FEA250;
+}
+.comment .commentNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 100px;
+}
+.comment .commentNav .commentIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.comment .commentNav .commentIcon i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--primary);
+}
+.comment .commentNav .commentIcon i:nth-child(2){
+    background-color: var(--primary);
+    color: #fff;
+}

@@ -1,0 +1,33 @@
+.subscribe {
+    transform: translateY(55%);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 70px;
+    height: 233px;
+    box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.02);
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.subscribe h1 {
+    width: 70%;
+    color: #0B132A;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 45px;
+    margin-bottom: 20px;
+}
+.subscribe button {
+    width: 250px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #F53838;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0px 30px 30px -10px rgba(245, 56, 56, 0.35);
+}

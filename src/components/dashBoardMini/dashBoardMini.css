@@ -1,0 +1,35 @@
+.dashBoardMini {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100px;
+    background-color: rgba(242, 237, 237, 0.9);
+    border-radius: 10px;
+    box-shadow: 10px 10px 40px 60px rgba(242, 237, 237, 0.9);
+    border: none;
+}
+.dashBoardMini i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;  
+    background-color: #FFECEC;
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 20px;
+}
+.dashBoardMini .dashBoardMiniItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.dashBoardMini .dashBoardMiniItems .data strong {
+    font-size: 25px;
+}
+.dashBoardMini .dashBoardMiniItems .data p {
+    font-size: 20px;
+}

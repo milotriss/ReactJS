@@ -1,0 +1,37 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 50px;
+}
+.banner .bannerLeft {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+.banner .bannerLeft h2 {
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 100px;
+}
+.banner .bannerLeft p {
+    line-height: 30px;
+    font-size: 16px;
+}
+.banner .bannerLeft button {
+    border-radius: 10px;
+    background: #F53838;
+    width: 250px;
+    height: 60px;
+    flex-shrink: 0;
+    color: #fff;
+    border: none;
+    box-shadow: 0px 30px 30px -10px rgba(245, 56, 56, 0.35);
+    
+}
+.banner img {
+    width: 50%;
+}
