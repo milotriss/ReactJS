@@ -10,14 +10,14 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 150px;
+    padding: 0 200px;
     margin-top: 30px;
 }
 .footer .footerNav {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 250px;
+    gap: 200px;
 }
 .footer .footerNav ul {
     display: flex;
