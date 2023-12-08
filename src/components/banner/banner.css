@@ -23,14 +23,18 @@
 }
 .banner .bannerLeft button {
     border-radius: 10px;
-    background: #F53838;
+    background: transparent;
     width: 250px;
     height: 60px;
     flex-shrink: 0;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-size: 20px;
+}
+.banner .bannerLeft button:hover {
+    background-color: var(--primary);
     color: #fff;
-    border: none;
-    box-shadow: 0px 30px 30px -10px rgba(245, 56, 56, 0.35);
-    
+    box-shadow: 0px 30px 30px -12px rgba(245, 56, 56, 0.35);
 }
 .banner img {
     width: 50%;

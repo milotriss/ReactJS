@@ -1,4 +1,5 @@
 .planGroup {
+    padding-right: 150px;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -43,6 +44,9 @@
     border-radius: 10px;
     border: 2px solid #DDD;
     background: #FFF;
+}
+.planGroup .plans .plan:hover {
+    border: 2px solid var(--primary);
 }
 .planGroup .plans .plan h4 {
     color: #0B132A;
