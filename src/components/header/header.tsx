@@ -1,44 +1,43 @@
-import { ChangeEvent, useRef, useState } from 'react'
+
+import { useRef, useState } from 'react'
 import './header.css'
-import { Todo } from '../../App'
+import axios from 'axios'
 
 
 interface Props {
-  addNewTodo:Function
+  handleUpdate:Function
 }
 
+
 const Header = (props:Props):JSX.Element => {
-
-  let [content, setContent] = useState<string>('')
-
-  let inputRef:any = useRef()
-
-  let handleAddTodo = () => {
-    let newTodo:Todo = {
-      id: Math.random() * 100,
-      content: content,
-      status: false
-    }
-    props.addNewTodo(newTodo)
-    setContent('')
-    inputRef.current.focus()
+  const [task, setTask] = useState<string>('')
+  // console.log(todo);
+  const input:any = useRef()
+  const handlePost = async ():Promise<void> => {
+      await axios.post('http://localhost:9000/todoLists', {content: task, status:false})
+      .then(() => {
+        input.current.focus()
+        setTask('')
+        props.handleUpdate()
+      })
+      .catch(() => {
+        console.log("loi");
+      })
   }
-
+  
+  
   return (
     <header>
         <h1 className='titleHeader'>Todolist</h1>
         <div className="addTodo">
             <input
-            ref={inputRef}
-            value={content}
-            autoFocus 
-            placeholder='Enter your task' 
+            autoFocus
+            ref={input}
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
             className='inputTodo' 
-            type="text" 
-            onChange={(event: ChangeEvent<HTMLInputElement>) => 
-              setContent(event.target.value)}
             />
-            <button onClick={handleAddTodo} className='btnTodo'>Add+</button>
+            <button onClick={handlePost} className='btnTodo'>Add+</button>
         </div>
     </header>
   )

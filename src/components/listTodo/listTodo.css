@@ -49,39 +49,3 @@
     font-size: 25px;
     font-weight: 700;
 }
-.modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.modal .modalAction {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 300px;
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    padding: 20px;
-}
-.modal .modalAction input {
-    width: 80%;
-    height: 30px;
-    padding: 0 10px;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #fff;
-}
-.modal .modalAction button {
-    width: 80%;
-    height: 30px;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: #2c313c;
-    color: #fff;
-}
