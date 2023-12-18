@@ -1,0 +1,65 @@
+.dentist {
+    padding: 20px;
+}
+.dentist .dentistGroup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.dentistTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.dentistCard {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+}
+.dentistInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    transition: 0.3s;
+}
+.dentistCard:active{
+    border: 3px solid #0cf327;
+}
+.dentistCard img {
+    object-fit: cover;
+    width: 100%;
+}
+.dentistContent {
+    display: none;
+    transition: 0.3s;
+}
+.dentistName {
+    font-size: 20px;
+    text-transform: capitalize;
+    transition: 0.3s;
+
+}
+
+.dentistCard:hover .dentistContent {
+    display: block;
+    animation: up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+}
+@keyframes up {
+    from {
+        transform: translateY(100px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}

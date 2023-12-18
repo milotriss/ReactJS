@@ -1,0 +1,61 @@
+.pharmacy {
+    margin: 50px 0 ;
+}
+.pharmacyAction {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.iconPharmacy {
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.iconPharmacy:hover {
+    transform: scale(1.2);
+}
+.pharmacyGroup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 50px;
+}
+.pharmacyGroup figure:active {
+    border: 3px solid green;
+}
+.pharmacyGroup figure {
+    border: 3px solid transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.pharmacyGroup figure figcaption {
+    padding: 20px;
+}
+.pharmacyGroup figure figcaption h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.pharmacyGroup figure figcaption .pharmacyLists {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.pharmacyGroup figure figcaption .pharmacyLists .pharmacyList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}

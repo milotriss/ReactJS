@@ -1,0 +1,29 @@
+.sidebarMain {
+    height: 100vh;
+    width: 250px;
+    background-color: var(--background-layout);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+}
+.sidebarMain .listItems {
+    list-style: none;
+}
+.sidebarMain .listItems .listItem  {
+    width: 100%;
+}
+.sidebarMain .listItems .listItem a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    transition: 0.2s;
+    padding: 24px;
+}
+.sidebarMain .listItems .listItem a:hover {
+    background-color: var(--primary);
+}

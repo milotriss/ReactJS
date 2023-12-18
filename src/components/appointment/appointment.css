@@ -1,0 +1,83 @@
+.appointment {
+
+}
+
+.appointmentHeader ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 30px;
+}
+.appointmentHeader ul li {
+    padding: 30px 50px;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+.appointmentHeader ul li:hover{
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+}
+.appointmentGroup {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.appointmentGroup ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap :20px;
+    border: none;
+    list-style: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+.appointmentGroup ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
+}
+.appointmentGroup ul li .left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+.appointmentGroup ul li .left .leftInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+.pharmacyList {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+.right button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+}
+.right button:hover {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: #000;
+}
