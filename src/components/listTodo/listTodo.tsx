@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./listTodo.css";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { Todo } from "../../App";
 import axios from "axios";
-import { message, Popconfirm ,Modal, Input} from "antd";
-
+import { message, Popconfirm, Modal, Input, Button } from "antd";
 
 interface Props {
   handleUpdate: Function;
@@ -14,7 +13,7 @@ interface Props {
 const ListTodo = (props: Props): JSX.Element => {
   const [todo, setTodo] = useState<Todo[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [inputValue,setInputValue] = useState<string>('')
+  const [inputValue, setInputValue] = useState<string>("");
   useEffect((): any => {
     axios
       .get("http://localhost:9000/todoLists")
@@ -40,8 +39,10 @@ const ListTodo = (props: Props): JSX.Element => {
     setIsModalOpen(true);
   };
 
-  const handleOk = async(id:number) => {
-    await axios.patch(`http://localhost:9000/todoLists/${id}`, {content: inputValue});
+  const handleOk = async (id: number) => {
+    await axios.patch(`http://localhost:9000/todoLists/${id}`, {
+      content: inputValue,
+    });
     setIsModalOpen(false);
     props.handleUpdate();
   };
@@ -49,7 +50,20 @@ const ListTodo = (props: Props): JSX.Element => {
     setIsModalOpen(false);
   };
 
-  
+  const deleteAll = async () => {
+    Promise.all(
+      todo.map(async (item: any) => {
+        await axios.delete(`http://localhost:9000/todoLists/${item.id}`);
+      })
+    )
+      .then((data) => {
+        console.log(data);
+        props.handleUpdate();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <section className="listTodoGroup">
       <div className="content">
@@ -77,16 +91,25 @@ const ListTodo = (props: Props): JSX.Element => {
                       <FaRegTrashAlt className="iconTodo" />
                     </Popconfirm>
                     <>
-                      <FaEdit className="iconTodo"  type="primary" onClick={showModal}>
+                      <FaEdit
+                        className="iconTodo"
+                        type="primary"
+                        onClick={showModal}
+                      >
                         Open Modal
                       </FaEdit>
                       <Modal
                         title="Basic Modal"
                         open={isModalOpen}
-                        onOk={()=>handleOk(item.id)}
+                        onOk={() => handleOk(item.id)}
                         onCancel={handleCancel}
                       >
-                        <Input onChange={(e) => setInputValue(e.target.value)} placeholder={item.content} style={{width:"100%", height:40}} type="text" />
+                        <Input
+                          onChange={(e) => setInputValue(e.target.value)}
+                          placeholder={item.content}
+                          style={{ width: "100%", height: 40 }}
+                          type="text"
+                        />
                       </Modal>
                     </>
                   </div>
@@ -96,11 +119,18 @@ const ListTodo = (props: Props): JSX.Element => {
           )}
         </ul>
       </div>
-      <button onClick={async() =>{
-        setTodo([])
-        props.handleUpdate()
-        await axios.delete('http://localhost:9000/todoLists')
-      }} className="delete">Delete All</button>
+      <Popconfirm
+        title="Delete the task"
+        description="Are you sure to delete this task?"
+        onConfirm={deleteAll}
+        onCancel={cancel}
+        okText="Yes"
+        cancelText="No"
+      >
+      <Button style={{height:80}} className="delete">
+        Delete All
+      </Button>
+      </Popconfirm>
     </section>
   );
 };
