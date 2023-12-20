@@ -1,0 +1,52 @@
+.register {
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.register h1 {
+    color: #fff;
+    text-shadow: 3px 0 9px rgba(0, 0, 0, 0.5);
+    font-size: 40px;
+}
+
+.register_item {
+    margin: 25px 0;
+    width: 100%;
+}
+.register_item:last-child {
+    display: flex;
+    align-items: center;
+}
+.register_input {
+    width: 100%;
+    padding: 10px 30px;
+    border: none;
+    border-bottom: 1.5px solid #b4a7a7;
+    background: transparent;
+    color: #111;
+    font-size: 19px;
+    border: 1pc solid transparent;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+.register_item .error {
+    text-align: start;
+    transition: 0.2s;
+}
+
+.register_input::placeholder {
+    font-size: 16px;
+    color: #524e4e;
+    text-shadow: 2px 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.register_check {
+    border: 1px solid #524e4e;
+}
+
+.register_label {
+    font-size: 12px;
+}

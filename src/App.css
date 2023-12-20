@@ -1,67 +1,16 @@
 .App {
     width: 100vw;
     height: 100vh;
-}
-header {
+    /* background-image: url("../../img/BG-hp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    height: 60px;
-    width: 100vw;
-    background-color: #444;
-}
-header input {
-    width: 500px;
-    height: 40px;
-    border: 1px solid #fff;
-    background-color: transparent;
-    padding: 0 30px;
-    border-radius: 20px;
-    color: #fff;
-}
-header button {
-    padding: 10px 30px;
-    border-radius: 20px;
-    border: 1px solid #fff;
-}
-header button:hover {
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
+    background: linear-gradient(90deg, rgba(161, 159, 159, 0.5) 50%, rgba(80, 79, 79, 0.5) 90%);
 }
 
 
 
 
-main {
-    height: calc(100% - 60px);
-    width: 100vw;
-    padding: 50px 100px;
-    background-color: #c6c3c3;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-}
-main figure {
-    border: 1px solid #fff;
-    width: 18%;
-    min-height: 400px;
-}
-main figure img {
-    object-fit: cover;
-    height: 90%;
-    width: 100%;
-}
-main figure figcaption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-}
+
