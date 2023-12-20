@@ -1,76 +1,76 @@
-import { useState } from "react";
+import { useState, memo, useMemo } from "react";
 import Modal from "../modal/modal";
 import "./cart.css";
 import { FaRecycle } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { Carts } from "../../data/data";
+import { Dispatch } from "redux";
 
 interface Props {
-  offCart:Function
+  offCart: Function;
 }
 
-const Cart = (props:Props): JSX.Element => {
-  const [openModal, setOpenModal] = useState<boolean>(false)
-  const offModal = ():void => {
-    setOpenModal(false)
-  }
+const Cart = (props: Props): JSX.Element => {
+  const cartItems: Carts[] = useSelector((state: any) => state.cart);
+  const dispatch: Dispatch<any> = useDispatch();
+  const [onModal, setOnModal] = useState<boolean>(false);
+  const offModal = () => {
+    setOnModal(false);
+  };
+  let total: any = useMemo(() => {
+    let results = cartItems.reduce(
+      (result: number, item: Carts) => result + item.price * item.quantity,
+      0
+    );
+    return results;
+  }, [cartItems]);
   return (
     <section className="cartOverlay">
       <div className="cart">
         <h1>Your Cart</h1>
         <ul className="listCarts">
-          <li className="cartItem">
-            <img src="../../../asset/img/969cd1b6-7315-4be3-9544-2e4092aa9f35.jpeg" alt="" />
-            <p>Name products</p>
-            <div className="cartQuantity">
-              <span>1</span>
-              <button>-</button>
-              <button>+</button>
-            </div>
-            <p>Price</p>
-            <FaRecycle className="iconListCart" />
-          </li>
-          <li className="cartItem">
-            <img src="../../../asset/img/Bread & Olives.jpeg" alt="" />
-            <p>Name products</p>
-            <div className="cartQuantity">
-              <span>1</span>
-              <button>-</button>
-              <button>+</button>
-            </div>
-            <p>Price</p>
-            <FaRecycle className="iconListCart" />
-          </li>
-          <li className="cartItem">
-            <img src="../../../asset/img/chocolate crossiant 巧克力可颂.jpeg" alt="" />
-            <p>Name products</p>
-            <div className="cartQuantity">
-              <span>1</span>
-              <button>-</button>
-              <button>+</button>
-            </div>
-            <p>Price</p>
-            <FaRecycle className="iconListCart" />
-          </li>
-          <li className="cartItem">
-            <img src="../../../asset/img/Rezept von Nima Hemmat-Azad_ Croissant _ Kochbücher & ihre besten Rezepte.jpeg" alt="" />
-            <p>Name products</p>
-            <div className="cartQuantity">
-              <span>1</span>
-              <button>-</button>
-              <button>+</button>
-            </div>
-            <p>Price</p>
-            <FaRecycle className="iconListCart" />
-          </li>
+          {cartItems.map((item: Carts) => {
+            return (
+              <li key={item.id} className="cartItem">
+                <img src={item.img} alt="" />
+                <p>{item.name}</p>
+                <div className="cartQuantity">
+                  <span>{item.quantity}</span>
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "ON_MINUS", payload: item.id })
+                    }
+                  >
+                    -
+                  </button>
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "ON_PLUS", payload: item.id })
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+                <p>{item.quantity * item.price}</p>
+                <FaRecycle
+                  onClick={() =>
+                    dispatch({ type: "DELETE_CART", payload: item.id })
+                  }
+                  className="iconListCart"
+                />
+              </li>
+            );
+          })}
         </ul>
         <div className="btnCart">
+          <span style={{ color: "#fff" }}>Total: {total}</span>
           <button onClick={() => props.offCart()}>ESC</button>
-          <button onClick={() => setOpenModal(true)}>CHECK OUT</button>
+          <button onClick={() => setOnModal(true)}>CHECK OUT</button>
         </div>
       </div>
-      {openModal ? <Modal offModal={offModal}/> : null}
-      
+      {onModal ? <Modal offCart={props.offCart} offModal={offModal} /> : null}
     </section>
   );
 };
 
-export default Cart;
+export default memo(Cart);
